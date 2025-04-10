@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 // Import routes
 const authRoutes = require('./routes/auth.routes');
+const profileRoutes = require('./routes/profile.routes');
 
 // Load environment variables
 dotenv.config();
@@ -22,6 +23,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/profile', profileRoutes);
 
 // Health check route
 app.get('/', (req, res) => {
